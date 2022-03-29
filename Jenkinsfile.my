@@ -1,0 +1,12 @@
+pipeline{
+    agent any
+    stages {
+        stage ('1 - Build') {
+            steps{
+                echo "starting to build this project"
+                sh './gradlew build --no-daemon'
+                //archiveArtifacts artifacts: 'dist/trainSchedule.zip'
+            }
+        }
+    }
+}
